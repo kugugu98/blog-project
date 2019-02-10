@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <h1>포트폴리오 페이지입니다.</h1>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                {% for portfolio in portfolios.all %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="{{ portfolio.image.url }}" alt=" Card image cap">
+                        <div class="card-body">
+                            <h4>{{ portfolio.title }}</h4>
+                            <p class="card-text">{{ portfolio.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+    
